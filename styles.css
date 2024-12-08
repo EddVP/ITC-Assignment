@@ -1,0 +1,245 @@
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: pink;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+}
+
+/* Main Section Styles */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+/* Result Container for alignment */
+#result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Space between button and result */
+}
+
+/* Loader Animation */
+.loader {
+    display: block;
+    --height-of-loader: 4px;
+    --loader-color: #0071e2;
+    width: 130px;
+    height: var(--height-of-loader);
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin-bottom: 10px; /* Space between loader and result text */
+}
+
+.loader::before {
+    content: "";
+    position: absolute;
+    background: var(--loader-color);
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-radius: 30px;
+    animation: moving 1s ease-in-out infinite;
+}
+
+@keyframes moving {
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+        right: 0;
+        left: unset;
+    }
+}
+
+/* Result Text Styling */
+#result {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    align-items: center;
+    flex-wrap: nowrap; /* Prevent wrapping of buttons to the next line */
+    padding: 20px;
+}
+
+/* General Button Styling */
+.brutalist-button {
+    background-color: #5a5a5a;
+    border: 3px solid #9b9b9b;
+    border-radius: 8px;
+    box-shadow: 4px 4px 1px #000000;
+    color: white;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin: 0 5px; /* Reduced horizontal spacing between buttons */
+}
+
+/* Hover Effects */
+.brutalist-button:hover {
+    background-color: #808080;
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Temporary Button Text and Logo */
+.temp-logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.button-text {
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .brutalist-button {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .brutalist-button {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brutalist-button {
+        width: 100px;
+        height: 100px;
+    }
+
+    .temp-logo {
+        font-size: 1.5rem;
+    }
+
+    .button-text {
+        font-size: 12px;
+    }
+}
+.brutalist-button {
+    text-decoration: none; /* Prevent underline */
+}
+
+.brutalist-button .button-text {
+    text-decoration: none; /* Ensure no underline on nested text */
+}
+
+/* Center the calculator table in the main section */
+#calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#calculator-table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: auto;
+    background-color: #f8f8f8;
+    border: 2px solid #ccc;
+    padding: 20px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#calculator-table td {
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Button alignment in the table */
+#computetaxbtn {
+    padding: 10px 20px;
+    background-color: #5a5a5a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#computetaxbtn:hover {
+    background-color: #808080;
+    transform: scale(1.05);
+}
+
+

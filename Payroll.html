@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payroll</title>
+    <link rel="stylesheet" href="payroll.css" />
+    <script src="payroll.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="header-title">Simple Payroll</h1>
+        <a href="index.html" class="link">Home</a>
+    </header>
+
+    <div class="container">
+        <div>
+            <form id="employeeForm" novalidate>
+                <label for="name">Employee Name</label>
+                <input type="text" id="name" required />
+                <label for="daysworked">Days Worked</label>
+                <input type="number" id="daysworked" required />
+                <label for="dailyrate">Daily Rate</label>
+                <input type="number" id="dailyrate" required />
+                <label for="deduction">Deduction</label>
+                <input type="number" id="deduction" required />
+                <button type="submit" id="btnsubmit">Submit</button>
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>Employee No.</td>
+                    <td>Employee Name</td>
+                    <td>Days Worked</td>
+                    <td>Daily Rate</td>
+                    <td>Gross Pay</td>
+                    <td>Deduction</td>
+                    <td>Net Pay</td>
+                </tr>
+            </thead>
+            <tbody id="tablebody"></tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Total:</td>
+                    <td id="tGrossPay" class="ndata">0.00</td>
+                    <td id="tDeduction" class="ndata">0.00</td>
+                    <td id="tNetPay" class="ndata">0.00</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div>
+            <label>Enter Emp. No.</label>
+            <input id="delemployee" type="number" />
+            <button type="button" id="btnedit">Edit</button>
+            <button type="button" id="btndelete">Delete</button>
+            <button type="button" id="btndeleteall">Delete All</button>
+        </div>
+    </div>
+
+    <!-- Dialogs -->
+    <dialog id="dlgConfirmSubmit">
+        <form method="dialog">
+            <h4>Are you sure you want to submit this information?</h4>
+            <div class="dlgbuttons">
+                <button id="confirmSubmit" value="confirm">Yes, Submit</button>
+                <button id="cancelSubmit" value="cancel">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="dlgConfirmEdit">
+        <form method="dialog">
+            <h4 id="edtmsg"></h4>
+            <div class="dlgbuttons">
+                <button id="btnConfirmEdit" value="confirm">Confirm</button>
+                <button id="btnCancelEdit" value="cancel">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="dlgConfirmCancel">
+        <form method="dialog">
+            <h4 id="dlgmsg"></h4>
+            <div class="dlgbuttons">
+                <button id="btnConfirmCancel" value="confirm">Confirm</button>
+                <button id="btnCancelCancel" value="cancel">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="dlgAreYouSure">
+        <form method="dialog">
+            <h4 id="dlgmsg2"></h4>
+            <div class="dlgbuttons">
+                <button id="btnYes" value="yes">Yes</button>
+                <button id="btnNo" value="no">No</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>

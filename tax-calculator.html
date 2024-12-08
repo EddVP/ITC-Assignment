@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="tax-calculator.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Tax Calculator</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="calculator">
+            <h1>Compute Your Tax</h1>
+            <table id="calculator-table">
+                <tr>
+                    <td><label for="ti">Enter Your Income (TI):</label></td>
+                    <td><input type="number" id="ti" placeholder="Enter total income"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button id="computetaxbtn">Compute Tax</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <div id="result-container">
+                            <div id="loader" class="loader" style="display: none;"></div>
+                            <p id="result"></p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

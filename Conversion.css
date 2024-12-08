@@ -1,0 +1,160 @@
+/* Conversion.css */
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: pink;
+    color: #333;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between; /* Space between the title and nav */
+    align-items: center; /* Align items vertically */
+    padding: 1rem 2rem;
+}
+
+header .header-title {
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+header nav {
+    margin: 0; /* Reset any unnecessary margins */
+}
+
+header nav .link {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem; /* Optional padding for better click area */
+}
+
+header nav .link:hover {
+    text-decoration: underline;
+    background: #005f87;
+}
+
+main {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: ghostwhite;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2.visually-hidden {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.number-input,
+select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.number-input:focus,
+select:focus {
+    border-color: #0077b6;
+    outline: none;
+}
+
+.conversion-separator {
+    text-align: center;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.button {
+    display: inline-block;
+    background: #0077b6;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.button:hover {
+    background: #005f87;
+}
+
+.link {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #0077b6;
+    font-weight: bold;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Loader Animation */
+.button:disabled {
+    position: relative;
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.button:disabled::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px;
+    border: 2px solid #fff;
+    border-top: 2px solid #0077b6;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

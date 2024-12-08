@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Tool</title>
+    <link rel="stylesheet" href="Conversion.css">
+    <script src="Conversion.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">General Conversion Tool</h1>
+        <nav>
+            <a href="index.html" class="link">Home</a>
+        </nav>
+    </header>
+    <main class="main-content">
+        <section class="conversion-section">
+            <form id="conversion-form" aria-labelledby="conversion-header">
+                <h2 id="conversion-header" class="visually-hidden">Conversion Form</h2>
+                
+                <div class="form-group">
+                    <label for="operation" class="label">Select Conversion:</label>
+                    <select id="operation" name="operation" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="CTF">Celsius to Fahrenheit</option>
+                        <option value="FTC">Fahrenheit to Celsius</option>
+                        <option value="MTF">Meters to Feet</option>
+                        <option value="FTM">Feet to Meters</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="num1" class="label">Enter a number:</label>
+                    <input type="number" id="num1" name="num1" class="number-input" step="any" placeholder="Enter value" required>
+                </div>
+
+                <p class="conversion-separator" aria-hidden="true">to</p>
+
+                <div class="form-group">
+                    <label for="result" class="label">Result:</label>
+                    <input type="number" id="result" name="result" class="number-input" step="any" readonly placeholder="Converted value">
+                </div>
+
+                <button type="submit" class="button" id="convert">Convert</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Edd Vincent Patnugot</p>
+    </footer>
+</body>
+</html>

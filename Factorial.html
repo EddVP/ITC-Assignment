@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+    <link rel="stylesheet" href="Factorial.css">
+    <script src="Factorial.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">Factorial, Sum, and Average of First N Natural Numbers</h1>
+        <nav>
+            <a href="index.html" class="link">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="number-container">
+            <h2>Perform Calculations</h2>
+            <p>Enter your number and choose an operation to see the results.</p>
+    
+            <!-- Form for inputs and results -->
+            <form id="conversionForm">
+                <div class="form-group">
+                    <label for="number" class="label">Enter a Number:</label>
+                    <input type="number" id="number" class="number-input" placeholder="Enter a number" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="operation" class="label">Choose an Operation:</label>
+                    <select id="operation" required>
+                        <option value="" disabled selected>Select an operation</option>
+                        <option value="F">Factorial</option>
+                        <option value="S">Sum</option>
+                        <option value="A">Average</option>
+                    </select>
+                </div>
+            
+                <div class="form-group">
+                    <label for="result" class="label">Result:</label>
+                    <input type="text" id="result" class="number-input" placeholder="Result will appear here" readonly>
+                </div>
+            
+                <button type="button" id="calculate" class="button">Calculate</button>
+                <div class="loader" id="loader" style="display: none;"></div> <!-- Loader will show when calculating -->
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        &copy; Edd Vincent Patnugot
+    </footer> 
+</body>
+</html>

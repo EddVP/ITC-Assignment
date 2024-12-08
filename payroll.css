@@ -1,0 +1,228 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Start content from the top */
+  align-items: center; /* Center content horizontally */
+  background-color: pink;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Container Styles */
+.container {
+  background-color: ghostwhite;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  margin-top: 6rem; /* Add margin to ensure content is not hidden behind fixed header */
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1.5rem 2rem;
+  color: white;
+  border-radius: 0 0 20px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.link {
+  color: white;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* Form and Input Styles */
+label {
+  font-weight: 500;
+  color: #333;
+  display: block;
+  margin-top: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.1);
+}
+
+/* Button Styles */
+button {
+  display: inline-block;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #007BFF;
+  border: 2px solid #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 0.5rem 0;
+}
+
+button:hover {
+  background: #333;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+thead {
+  background-color: #007BFF;
+  color: white;
+}
+
+thead tr td {
+  font-weight: bold;
+  padding: 12px;
+  text-align: left;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f1f5f9;
+}
+
+tbody td, tfoot td {
+  padding: 10px;
+  text-align: left;
+}
+
+tfoot {
+  background-color: #f1f5f9;
+  font-weight: bold;
+}
+
+.ndata {
+  text-align: right;
+  font-weight: bold;
+  color: #007BFF;
+}
+
+/* Dialog Styles */
+dialog {
+  border: none;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  width: 400px;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog h4 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.dlgbuttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.dlgbuttons button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+
+/* Loader Styles */
+.loader {
+  display: block;
+  --height-of-loader: 4px;
+  --loader-color: #0071e2;
+  width: 130px;
+  height: var(--height-of-loader);
+  border-radius: 30px;
+  background-color: rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  background: var(--loader-color);
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 30px;
+  animation: loading 1s ease-in-out infinite;
+}
+
+@keyframes loading {
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    right: 0;
+    left: unset;
+  }
+}
