@@ -69,52 +69,52 @@ document.getElementById("employeeForm").addEventListener("submit", (e) => {
 
 // Edit button event
 document.getElementById("btnedit").addEventListener("click", () => { 
-  const empNumberInput = document.getElementById("delemployee").value.trim(); // retrieves employee number to edit from the input
+    const empNumberInput = document.getElementById("delemployee").value.trim(); // retrieves employee number to edit from the input
 
-  const empNumber = parseInt(empNumberInput, 10); // converts string input to a base 10 integer
-  if (isNaN(empNumber) || empNumber < 1 || empNumber > employeesList.length) { // alerts if the input is invalid
-    alert("Invalid Employee Number. Please enter a number between 1 and " + employeesList.length);
-    return false;
-  }
-
-  // Fill the form with the existing employee data for editing
-  const empIndex = empNumber - 1; // converts value of employee to be appropriate with array index
-  const employee = employeesList[empIndex]; // assigns that value to employee, meaning we can now directly access the object with the employee variable
-
-  // Show the confirmation dialog for editing
-  const confirmationDialog = document.getElementById("dlgConfirmEdit");
-  document.getElementById("edtmsg").textContent = `Are you sure you want to edit the details of Employee No. ${empNumber}?`;
-  confirmationDialog.showModal();
-
-  confirmationDialog.addEventListener("close", () => {
-    if (confirmationDialog.returnValue === 'confirm') {
-      const name = document.getElementById("name").value.trim();
-      const daysworkedInput = document.getElementById("daysworked").value.trim();
-      const dailyrateInput = document.getElementById("dailyrate").value.trim();
-      const deductionInput = document.getElementById("deduction").value.trim();
-
-      if (!name || !daysworkedInput || !dailyrateInput || !deductionInput) {
-        alert("All fields are required.");
-        return;
-      }
-
-      // Update the employee details
-      employee.name = name; // syntax for updating value of property = objectName.property
-      employee.daysWorked = parseFloat(daysworkedInput);
-      employee.dailyRate = parseFloat(dailyrateInput);
-      employee.deduction = parseFloat(deductionInput);
-      employee.grossPay = (employee.daysWorked * employee.dailyRate).toFixed(2);
-      employee.netPay = (employee.grossPay - employee.deduction).toFixed(2);
-
-      updateEmployeeTable();  // Update the table with the modified data
-      document.getElementById("delemployee").value = ''; // Reset the employee number field
-      // Reset the input fields after editing
-      document.getElementById("name").value = '';
-      document.getElementById("daysworked").value = '';
-      document.getElementById("dailyrate").value = '';
-      document.getElementById("deduction").value = '';
+    const empNumber = parseInt(empNumberInput, 10); // converts string input to a base 10 integer
+    if (isNaN(empNumber) || empNumber < 1 || empNumber > employeesList.length) { // alerts if the input is invalid
+        alert("Invalid Employee Number. Please enter a number between 1 and " + employeesList.length);
+        return false;
     }
-  });
+
+    // Fill the form with the existing employee data for editing
+    const empIndex = empNumber - 1; // converts value of employee to be appropriate with array index
+    const employee = employeesList[empIndex]; // assigns that value to employee, meaning we can now directly access the object with the employee variable
+
+    // Show the confirmation dialog for editing
+    const confirmationDialog = document.getElementById("dlgConfirmEdit");
+    document.getElementById("edtmsg").textContent = `Are you sure you want to edit the details of Employee No. ${empNumber}?`;
+    confirmationDialog.showModal();
+
+    confirmationDialog.addEventListener("close", () => {
+        if (confirmationDialog.returnValue === 'confirm') {
+            const name = document.getElementById("name").value.trim();
+            const daysworkedInput = document.getElementById("daysworked").value.trim();
+            const dailyrateInput = document.getElementById("dailyrate").value.trim();
+            const deductionInput = document.getElementById("deduction").value.trim();
+
+            if (!name || !daysworkedInput || !dailyrateInput || !deductionInput) {
+                alert("All fields are required.");
+                return;
+            }
+
+            // Update the employee details
+            employee.name = name; // syntax for updating value of property = objectName.property
+            employee.daysWorked = parseFloat(daysworkedInput);
+            employee.dailyRate = parseFloat(dailyrateInput);
+            employee.deduction = parseFloat(deductionInput);
+            employee.grossPay = (employee.daysWorked * employee.dailyRate).toFixed(2);
+            employee.netPay = (employee.grossPay - employee.deduction).toFixed(2);
+
+            updateEmployeeTable();  // Update the table with the modified data
+            document.getElementById("delemployee").value = ''; // Reset the employee number field
+            // Reset the input fields after editing
+            document.getElementById("name").value = '';
+            document.getElementById("daysworked").value = '';
+            document.getElementById("dailyrate").value = '';
+            document.getElementById("deduction").value = '';
+        }
+    });
 });
 
 // Delete button event
