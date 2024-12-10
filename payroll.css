@@ -226,3 +226,54 @@ dialog h4 {
     left: unset;
   }
 }
+
+/* Table Responsive Wrapper */
+.table-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  width: 100%;
+  margin-top: 1.5rem; /* Space from form above */
+}
+
+table {
+  width: 100%;
+  min-width: 800px; /* Ensure consistent structure for large tables */
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #007BFF;
+  color: white;
+}
+
+thead tr td {
+  font-weight: bold;
+  padding: 12px;
+  text-align: left;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f1f5f9;
+}
+
+tbody td,
+tfoot td {
+  padding: 10px;
+  text-align: left;
+}
+
+tfoot {
+  background-color: #f1f5f9;
+  font-weight: bold;
+}
+
+.ndata {
+  text-align: right;
+  font-weight: bold;
+  color: #007BFF;
+}
