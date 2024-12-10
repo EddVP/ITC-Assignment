@@ -28,31 +28,34 @@
             </form>
         </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <td>Employee No.</td>
-                    <td>Employee Name</td>
-                    <td>Days Worked</td>
-                    <td>Daily Rate</td>
-                    <td>Gross Pay</td>
-                    <td>Deduction</td>
-                    <td>Net Pay</td>
-                </tr>
-            </thead>
-            <tbody id="tablebody"></tbody>
-            <tfoot>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Total:</td>
-                    <td id="tGrossPay" class="ndata">0.00</td>
-                    <td id="tDeduction" class="ndata">0.00</td>
-                    <td id="tNetPay" class="ndata">0.00</td>
-                </tr>
-            </tfoot>
-        </table>
+        <!-- Responsive Table Container -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Employee No.</td>
+                        <td>Employee Name</td>
+                        <td>Days Worked</td>
+                        <td>Daily Rate</td>
+                        <td>Gross Pay</td>
+                        <td>Deduction</td>
+                        <td>Net Pay</td>
+                    </tr>
+                </thead>
+                <tbody id="tablebody"></tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Total:</td>
+                        <td id="tGrossPay" class="ndata">0.00</td>
+                        <td id="tDeduction" class="ndata">0.00</td>
+                        <td id="tNetPay" class="ndata">0.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
 
         <div>
             <label>Enter Emp. No.</label>
